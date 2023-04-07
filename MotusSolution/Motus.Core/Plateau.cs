@@ -22,19 +22,20 @@
 
         public bool MotTrouve()
         {
-            throw new NotImplementedException();
+            return Tentatives.Any(tentative => tentative.IsOk());
         }
 
         public void ChoisiUnMotAUHasard()
         {
-            Random random= new Random(DateTime.Now.Millisecond);
+            Random random = new Random(DateTime.Now.Millisecond);
             var list = this.GetMotsPossibles();
             this.MotADeviner = list[random.Next(list.Count)];
         }
 
         public void AddMot(string mot)
         {
-            throw new NotImplementedException();
+            var essaiMot = calculMotService.CalculMot(mot, MotADeviner);
+            Tentatives.Add(essaiMot);
         }
     }
 }

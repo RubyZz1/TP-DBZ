@@ -20,5 +20,6 @@ public enum ActionDeCombat
     /// Peut être paré par <see cref="Parade"/>
     /// </summary>
     /// <remarks>Au bout de 5 KameHameHa, tu deviens Super Saiyan et ton KameHameHa ne peut plus être paré !</remarks>
-    KameHameHa
+    KameHameHa,
+    Attaque
 }

@@ -9,9 +9,16 @@
 
         public List<Lettre> Lettres { get; set; }
 
-        public bool IsOk()
+       public bool IsOk()
         {
-            throw new NotImplementedException();
+            foreach (Lettre lettre in Lettres)
+            {
+                if (lettre.Etat != EtatLettre.OK)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }
